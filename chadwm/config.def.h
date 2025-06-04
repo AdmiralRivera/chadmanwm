@@ -223,7 +223,7 @@ static const Key keys[] = {
 
     // change border size
     { MODKEY|ShiftMask,                 XK_minus,   setborderpx,    {.i = -1 } },
-    { MODKEY|ShiftMask,                 XK_;,       setborderpx,    {.i = +1 } },
+    { MODKEY|ShiftMask,                 XK_semicolon,       setborderpx,    {.i = +1 } },
     { MODKEY|ShiftMask,                 XK_d,       setborderpx,    {.i = default_border } },
 
     // kill dwm
