@@ -144,54 +144,54 @@ static const Key keys[] = {
 	{0,				XF86XK_MonBrightnessDown,   spawn,	{.v = light_down}},
 
     // screenshot fullscreen and cropped
-    {MODKEY|ControlMask,                XK_u,       spawn,
+    {MODKEY|ControlMask,                XK_f,       spawn,
         SHCMD("maim | xclip -selection clipboard -t image/png")},
-    {MODKEY,                            XK_u,       spawn,
+    {MODKEY,                            XK_f,       spawn,
         SHCMD("maim --select | xclip -selection clipboard -t image/png")},
 
-    { MODKEY,                           XK_c,       spawn,          SHCMD("rofi -show drun") },
+    { MODKEY,                           XK_m,       spawn,          SHCMD("rofi -show drun") },
     { MODKEY,                           XK_Return,  spawn,          SHCMD("st")},
 
     // toggle stuff
-    { MODKEY,                           XK_b,       togglebar,      {0} },
-    { MODKEY|ControlMask,               XK_t,       togglegaps,     {0} },
+    { MODKEY,                           XK_v,       togglebar,      {0} },
+    { MODKEY|ControlMask,               XK_b,       togglegaps,     {0} },
     { MODKEY|ShiftMask,                 XK_space,   togglefloating, {0} },
-    { MODKEY,                           XK_f,       togglefullscr,  {0} },
+    { MODKEY,                           XK_t,       togglefullscr,  {0} },
 
-    { MODKEY|ControlMask,               XK_w,       tabmode,        { -1 } },
-    { MODKEY,                           XK_j,       focusstack,     {.i = +1 } },
-    { MODKEY,                           XK_k,       focusstack,     {.i = -1 } },
-    { MODKEY,                           XK_i,       incnmaster,     {.i = +1 } },
-    { MODKEY,                           XK_d,       incnmaster,     {.i = -1 } },
+    { MODKEY|ControlMask,               XK_d,       tabmode,        { -1 } },
+    { MODKEY,                           XK_n,       focusstack,     {.i = +1 } },
+    { MODKEY,                           XK_e,       focusstack,     {.i = -1 } },
+    { MODKEY,                           XK_u,       incnmaster,     {.i = +1 } },
+    { MODKEY,                           XK_h,       incnmaster,     {.i = -1 } },
 
     // shift view
     { MODKEY,                           XK_Left,    shiftview,      {.i = -1 } },
     { MODKEY,                           XK_Right,   shiftview,      {.i = +1 } },
 
     // change m,cfact sizes 
-    { MODKEY,                           XK_h,       setmfact,       {.f = -0.05} },
-    { MODKEY,                           XK_l,       setmfact,       {.f = +0.05} },
-    { MODKEY|ShiftMask,                 XK_h,       setcfact,       {.f = +0.25} },
-    { MODKEY|ShiftMask,                 XK_l,       setcfact,       {.f = -0.25} },
-    { MODKEY|ShiftMask,                 XK_o,       setcfact,       {.f =  0.00} },
+    { MODKEY,                           XK_y,       setmfact,       {.f = -0.05} },
+    { MODKEY,                           XK_o,       setmfact,       {.f = +0.05} },
+    { MODKEY|ShiftMask,                 XK_y,       setcfact,       {.f = +0.25} },
+    { MODKEY|ShiftMask,                 XK_o,       setcfact,       {.f = -0.25} },
+    { MODKEY|ShiftMask,                 XK_p,       setcfact,       {.f =  0.00} },
 
 
-    { MODKEY|ShiftMask,                 XK_j,       movestack,      {.i = +1 } },
-    { MODKEY|ShiftMask,                 XK_k,       movestack,      {.i = -1 } },
+    { MODKEY|ShiftMask,                 XK_n,       movestack,      {.i = +1 } },
+    { MODKEY|ShiftMask,                 XK_e,       movestack,      {.i = -1 } },
     { MODKEY|ShiftMask,                 XK_Return,  zoom,           {0} },
     { MODKEY,                           XK_Tab,     view,           {0} },
 
     // overall gaps
-    { MODKEY|ControlMask,               XK_i,       incrgaps,       {.i = +1 } },
-    { MODKEY|ControlMask,               XK_d,       incrgaps,       {.i = -1 } },
+    { MODKEY|ControlMask,               XK_u,       incrgaps,       {.i = +1 } },
+    { MODKEY|ControlMask,               XK_h,       incrgaps,       {.i = -1 } },
 
     // inner gaps
-    { MODKEY|ShiftMask,                 XK_i,       incrigaps,      {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_i,       incrigaps,      {.i = -1 } },
+    { MODKEY|ShiftMask,                 XK_u,       incrigaps,      {.i = +1 } },
+    { MODKEY|ControlMask|ShiftMask,     XK_u,       incrigaps,      {.i = -1 } },
 
     // outer gaps
-    { MODKEY|ControlMask,               XK_o,       incrogaps,      {.i = +1 } },
-    { MODKEY|ControlMask|ShiftMask,     XK_o,       incrogaps,      {.i = -1 } },
+    { MODKEY|ControlMask,               XK_p,       incrogaps,      {.i = +1 } },
+    { MODKEY|ControlMask|ShiftMask,     XK_p,       incrogaps,      {.i = -1 } },
 
     // inner+outer hori, vert gaps 
     { MODKEY|ControlMask,               XK_6,       incrihgaps,     {.i = +1 } },
@@ -206,11 +206,11 @@ static const Key keys[] = {
     { MODKEY|ControlMask|ShiftMask,     XK_d,       defaultgaps,    {0} },
 
     // layout
-    { MODKEY,                           XK_t,       setlayout,      {.v = &layouts[0]} },
-    { MODKEY|ShiftMask,                 XK_f,       setlayout,      {.v = &layouts[1]} },
-    { MODKEY,                           XK_m,       setlayout,      {.v = &layouts[2]} },
+    { MODKEY,                           XK_b,       setlayout,      {.v = &layouts[0]} },
+    { MODKEY|ShiftMask,                 XK_t,       setlayout,      {.v = &layouts[1]} },
+    { MODKEY,                           XK_l,       setlayout,      {.v = &layouts[2]} },
     { MODKEY|ControlMask,               XK_g,       setlayout,      {.v = &layouts[10]} },
-    { MODKEY|ControlMask|ShiftMask,     XK_t,       setlayout,      {.v = &layouts[13]} },
+    { MODKEY|ControlMask|ShiftMask,     XK_b,       setlayout,      {.v = &layouts[13]} },
     { MODKEY,                           XK_space,   setlayout,      {0} },
     { MODKEY|ControlMask,               XK_comma,   cyclelayout,    {.i = -1 } },
     { MODKEY|ControlMask,               XK_period,  cyclelayout,    {.i = +1 } },
@@ -223,8 +223,8 @@ static const Key keys[] = {
 
     // change border size
     { MODKEY|ShiftMask,                 XK_minus,   setborderpx,    {.i = -1 } },
-    { MODKEY|ShiftMask,                 XK_p,       setborderpx,    {.i = +1 } },
-    { MODKEY|ShiftMask,                 XK_w,       setborderpx,    {.i = default_border } },
+    { MODKEY|ShiftMask,                 XK_;,       setborderpx,    {.i = +1 } },
+    { MODKEY|ShiftMask,                 XK_d,       setborderpx,    {.i = default_border } },
 
     // kill dwm
     { MODKEY|ControlMask,               XK_q,       spawn,        SHCMD("killall bar.sh chadwm") },
@@ -233,11 +233,11 @@ static const Key keys[] = {
     { MODKEY,                           XK_q,       killclient,     {0} },
 
     // restart
-    { MODKEY|ShiftMask,                 XK_r,       restart,           {0} },
+    { MODKEY|ShiftMask,                 XK_w,       restart,           {0} },
 
     // hide & restore windows
-    { MODKEY,                           XK_e,       hidewin,        {0} },
-    { MODKEY|ShiftMask,                 XK_e,       restorewin,     {0} },
+    { MODKEY,                           XK_r,       hidewin,        {0} },
+    { MODKEY|ShiftMask,                 XK_r,       restorewin,     {0} },
 
     TAGKEYS(                            XK_1,                       0)
     TAGKEYS(                            XK_2,                       1)
