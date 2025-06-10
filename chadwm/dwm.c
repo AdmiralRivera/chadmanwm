@@ -603,8 +603,7 @@ void attach(Client *c) {
 void
 attachBelow(Client *c)
 {
-  //If there is nothing on the monitor or the selected client is floating
-  attach as normal
+  //If there is nothing on the monitor or the selected client is floating attach as normal
   if(c->mon->sel == NULL || c->mon->sel == c || c->mon->sel->isfloating) {
 	  attach(c);
 	  return;
